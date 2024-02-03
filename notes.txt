@@ -1,0 +1,89 @@
+127.0.0.1:6379> set name vishal
+OK
+127.0.0.1:6379> get name
+"vishal"
+127.0.0.1:6379> set mono 8976789098
+OK
+127.0.0.1:6379> get mono
+"8976789098"
+127.0.0.1:6379> get keys*
+(nil)
+127.0.0.1:6379> get keys *
+(error) ERR wrong number of arguments for 'get' command
+127.0.0.1:6379> keys *
+1) "mono"
+2) "name"
+127.0.0.1:6379> exists mono
+(integer) 1
+127.0.0.1:6379> exists mono1
+(integer) 0
+127.0.0.1:6379> del mono
+(integer) 1
+127.0.0.1:6379> exists mono
+(integer) 0
+127.0.0.1:6379> keys *
+1) "name"
+127.0.0.1:6379> flushall
+OK
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379>
+
+
+
+
+127.0.0.1:6379> set name vishal
+OK
+127.0.0.1:6379> ttl name
+(integer) -1
+127.0.0.1:6379> expire name 20
+(integer) 1
+127.0.0.1:6379> ttl name
+(integer) 15
+127.0.0.1:6379> ttl name
+(integer) 11
+127.0.0.1:6379> ttl name
+(integer) 9
+
+
+127.0.0.1:6379> ttl name
+(integer) -2
+127.0.0.1:6379> get name
+(nil)
+
+
+
+[
+    {
+        "id": 1,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "description": "A classic novel about teenage angst",
+        "price": 12.99,
+        "pages": 224
+    },
+    {
+        "id": 3,
+        "title": "1984",
+        "author": "George Orwell",
+        "description": "A dystopian novel by George Orwell",
+        "price": 9.99,
+        "pages": 328
+    },
+    {
+        "id": 4,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "description": "A tale of the Jazz Age in America",
+        "price": 11.99,
+        "pages": 180
+    },
+    {
+        "id": 5,
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "author": "J.K. Rowling",
+        "description": "The first book in the Harry Potter series",
+        "price": 19.99,
+        "pages": 320
+    }
+]
