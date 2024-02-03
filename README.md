@@ -1,2 +1,2 @@
-# redis-db-springboot
-redis database use for rest endpoints in springboot
+# redis-messaging-springboot
+redis messaging queue implemented by springboot
